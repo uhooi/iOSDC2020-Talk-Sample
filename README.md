@@ -25,11 +25,11 @@ $ cd iOSDC2020-Talk-Sample
 
 3. トークに沿って `Makefile` を作成し、コミットしてプッシュします。  
 自分で実装するのが手間な人は `answer` ブランチからコピペしてください。  
-{URL}
+https://github.com/uhooi/iOSDC2020-Talk-Sample/blob/answer/Makefile
 
 4. トークに沿って `.github/workflows/main.yml` を作成し、コミットしてプッシュします。  
 `Makefile` と同様、 `answer` ブランチに答えがあります。  
-{URL}
+https://github.com/uhooi/iOSDC2020-Talk-Sample/blob/answer/.github/workflows/main.yml
 
 5. プッシュをトリガー（きっかけ）にCIが実行されるので、「Actions」タブから結果を確認します。  
 ![](./Docs/Images/Actions.png)

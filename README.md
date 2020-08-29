@@ -1,2 +1,6 @@
 # iOSDC2020-Talk-Sample
-iOSDC 2020「GitHub ActionsでiOSアプリをCIする個人的ベストプラクティス」レギュラートークのサンプルリポジトリ
+
+## 概要
+
+iOSDC 2020「GitHub ActionsでiOSアプリをCIする個人的ベストプラクティス」レギュラートークのサンプルリポジトリです。
+

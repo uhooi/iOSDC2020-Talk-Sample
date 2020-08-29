@@ -1,0 +1,75 @@
+name: UhooiPicBook
+
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: 13.0
+  developmentLanguage: ja
+  xcodeVersion: "11.6"
+  carthageExecutablePath: unset SDKROOT && mint run Carthage/Carthage carthage
+
+targets:
+  UhooiPicBook:
+    type: application
+    platform: iOS
+    sources:
+      - UhooiPicBook
+    settings:
+      base:
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
+        # DEVELOPMENT_TEAM: XXXXXXXXXX
+        INFOPLIST_FILE: UhooiPicBook/Info.plist
+        DEVELOPMENT_LANGUAGE: jp
+    dependencies:
+      - carthage: Alamofire
+
+  UhooiPicBookTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - UhooiPicBookTests
+    settings:
+      base:
+        INFOPLIST_FILE: UhooiPicBookTests/Info.plist
+    dependencies:
+      - target: UhooiPicBook
+      - carthage: OHHTTPStubs
+
+  UhooiPicBookUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UhooiPicBookUITests
+    settings:
+      base:
+        INFOPLIST_FILE: UhooiPicBookUITests/Info.plist
+    dependencies:
+      - target: UhooiPicBook
+
+schemes:
+  UhooiPicBook:
+    build:
+      targets:
+        UhooiPicBook: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - UhooiPicBook
+      targets:
+        - name: UhooiPicBookTests
+          # parallelizable: true
+          randomExecutionOrder: true
+        - name: UhooiPicBookUITests
+          # parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+

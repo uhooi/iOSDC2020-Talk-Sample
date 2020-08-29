@@ -32,7 +32,9 @@ https://github.com/uhooi/iOSDC2020-Talk-Sample/blob/answer/Makefile
 https://github.com/uhooi/iOSDC2020-Talk-Sample/blob/answer/.github/workflows/main.yml
 
 5. プッシュをトリガー（きっかけ）にCIが実行されるので、「Actions」タブから結果を確認します。  
-![](./Docs/Images/Actions.png)
+![](./Docs/Images/Actions.png)  
+フォークしたリポジトリのワークフローを有効にする方法は以下に記載しています。  
+https://github.com/uhooi/iOSDC2020-Article-Sample#ci
 
 6. CIが成功していればOKです！
 

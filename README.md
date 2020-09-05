@@ -41,6 +41,7 @@ https://github.com/uhooi/iOSDC2020-Article-Sample#ci
 
 - [GitHub ActionsでiOSアプリをCIする個人的ベストプラクティス by uhooi | トーク | iOSDC Japan 2020 - fortee.jp](https://fortee.jp/iosdc-japan-2020/proposal/aff7d899-f92e-4342-ae24-fde1ae4cf799)
 - [iOSDC 2020「GitHub ActionsでiOSアプリをCIする個人的ベストプラクティス」パンフレット記事の補足資料](https://gist.github.com/uhooi/4e4844e7e7f6c7ed1caca60112c1f539)
+- [actions/cache: Cache dependencies and build outputs in GitHub Actions](https://github.com/actions/cache)
 - [norio-nomura/action-swiftlint: GitHub Action for SwiftLint](https://github.com/norio-nomura/action-swiftlint)
 
 ## お問い合わせ

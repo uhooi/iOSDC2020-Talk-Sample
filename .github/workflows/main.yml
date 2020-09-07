@@ -1,33 +1,64 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
+    path-ignore:
+      - Docs/**
+      - README.md
   pull_request:
-    branches: [ main ]
+    branches:
+      - develop
+    path-ignore:
+      - Docs/**
+      - README.md
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  DEVELOPER_DIR: /Applications/Xcode_11.6.app/Contents/Developer
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+  test:
+    runs-on: macOS-latest
+    env:
+      MINT_PATH: mint/lib
+      MINT_LINK_PATH: mint/bin
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Cache Gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Install Bundled Gems
+        run: make install-bundler
+
+      - name: Install Mint
+        run: brew install mint
+
+      - name: Cache Mint packages
+        uses: actions/cache@v2
+        with:
+          path: mint
+          key: ${{ runner.os }}-mint-${{ hashFiles('**/Mintfile') }}
+          restore-keys: |
+            ${{ runner.os }}-mint-
+
+      - name: Install Carthage frameworks
+        run: make install-carthage
+
+      - name: Generate Xcode project and install Pods
+        run: make generate-xcodeproj
+
+      - name: Xcode build
+        run: make build-debug
+
+      - name: Xcode test
+        run: make test
+

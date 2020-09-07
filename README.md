@@ -15,16 +15,17 @@ GitHub Actionsのワークフローを作成し、みなさんの手で本リポ
 1. 本リポジトリをフォークします。  
 ![](./Docs/Images/Fork.png)
 
-2. トークに沿って `.github/workflows/main.yml` を作成し、コミットしてプッシュします。  
+2. 以下を参考にしてフォークしたリポジトリのワークフローを有効にします。  
+https://github.com/uhooi/iOSDC2020-Article-Sample#ci
+
+3. トークに沿って `.github/workflows/main.yml` を作成し、コミットしてプッシュします。  
 自分で実装するのが手間な人は `answer` ブランチからコピペしてください。  
 https://github.com/uhooi/iOSDC2020-Talk-Sample/blob/answer/.github/workflows/main.yml
 
-3. プッシュをトリガー（きっかけ）にCIが実行されるので、「Actions」タブから結果を確認します。  
+4. プッシュをトリガー（きっかけ）にCIが実行されるので、「Actions」タブから結果を確認します。  
 ![](./Docs/Images/Actions.png)  
-フォークしたリポジトリのワークフローを有効にする方法は以下に記載しています。  
-https://github.com/uhooi/iOSDC2020-Article-Sample#ci
 
-4. CIが成功していればOKです！
+5. CIが成功していればOKです！
 
 ## 参考リンク
 

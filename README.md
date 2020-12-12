@@ -36,7 +36,8 @@ https://github.com/uhooi/iOSDC2020-Talk-Sample/blob/answer/.github/workflows/mai
 
 ## お問い合わせ
 
-ハンズオンに行き詰まった、CIが失敗するなどの理由で問い合わせたい場合、Twitterの [@the_uhooi](https://twitter.com/the_uhooi) までご連絡ください。
+ハンズオンに行き詰まった、CIが失敗するなどの理由で問い合わせたい場合、Twitterの [@the_uhooi](https://twitter.com/the_uhooi) までご連絡ください。  
+または [Discussions](https://github.com/uhooi/iOSDC2020-Talk-Sample/discussions) にご投稿ください。
 
 ## おわりに
 

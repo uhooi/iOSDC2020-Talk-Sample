@@ -5,13 +5,13 @@ on:
     branches:
       - main
       - develop
-    path-ignore:
+    paths-ignore:
       - Docs/**
       - README.md
   pull_request:
     branches:
       - develop
-    path-ignore:
+    paths-ignore:
       - Docs/**
       - README.md
 
